@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>VIEW DETAILS</h1>
+    <table border="1">
+        <tr>
+            <td>Title</td>
+            <td>Comment</td>
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+        <% for(var pd of allPost){%>
+            <tr>
+                <td>
+                    <%= pd.title %>
+                </td>
+                <td>
+                    <%= pd.comment %>
+                </td>
+                <td>
+                    <img src="<%= pd.postimg %>" height="200px">
+                </td>
+                <td>
+                    <a href="deleteData/<%= pd.id %>">Delete</a> ||
+                    <a href="updateData/<%= pd.id %>">Update</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <br><br><br>
+    <a href="/post">ADD POST DATA</a>
+
+</body>
+
+</html>

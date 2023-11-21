@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ADD DETAILS</h1>
+    <table border="1">
+        <form action="/addDetails" method="post" enctype="multipart/form-data">
+            <tr>
+                <td>Enter Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Enter Age:</td>
+                <td><input type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td>Enter Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Hobby:</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="movie">Movie
+                    <input type="checkbox" name="hobby" value="music">Music
+                    <input type="checkbox" name="hobby" value="traveling">Traveling
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <% var cityData=["Surat","Navsari","Dang","Daman","Div","Rajkot"] %>
+                        <select name="city">
+                            <option value="">--Select City--</option>
+                            <% cityData.map((v,i)=>{ %>
+                                <option value="<%= v %>">
+                                    <%= v %>
+                                </option>
+                                <% }) %>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td>
+                    <textarea name="message" cols="30" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload Fils:</td>
+                <td>
+                    <input type="file" name="adminImage" >
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="ADD DATA"></td>
+            </tr>
+
+    </table><br><br><br>
+    <a href="/viewData">VIEW DATA</a>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<h1>POST FORM</h1>
+
+<form action="/post/addPostData" enctype="multipart/form-data" method="post">
+    <table border="1">
+        <tr>
+            <td>Enter Title:</td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td>Enter Message:</td>
+            <td><input type="text" name="comment"></td>
+        </tr>
+        <tr>
+            <td>Enter Image:</td>
+            <td><input type="file" name="postimg"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Post Data"></td>
+        </tr>
+    </table>
+    <a href="/post/viewPostData">View Post Data</a>
+</form>

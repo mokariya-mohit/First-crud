@@ -1,0 +1,72 @@
+<table border="1">
+    <form action="/editData" method="post" enctype="multipart/form-data">
+        <input type="text" name="oldId" value="<%= oldStudent.id %>">
+        <tr>
+            <td>Enter Name:</td>
+            <td><input type="text" name="name" value="<%= oldStudent.name%>"></td>
+        </tr>
+        <tr>
+            <td>Enter Age:</td>
+            <td><input type="text" name="age" value="<%= oldStudent.age%>"></td>
+        </tr>
+        <tr>
+            <td>Enter Gender:</td>
+            <td>
+                <input type="radio" name="gender" value="male" <% if(oldStudent.gender=='male' ){%>
+                <%= 'checked' %>
+                    <% }%>>Male
+                        <input type="radio" name="gender" value="female" <% if(oldStudent.gender=='female' ){%>
+                        <%= 'checked' %>
+                            <% }%>>Female
+
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Hobby:</td>
+            <td>
+                <input type="checkbox" name="hobby" value="movie" <% if(oldStudent.hobby.includes('movie')){%>
+                <%= 'checked' %>
+                    <%}%>>Movie
+                        <input type="checkbox" name="hobby" value="music" <% if(oldStudent.hobby.includes('music')){%>
+                        <%= 'checked' %>
+                            <%}%>>Music
+                                <input type="checkbox" name="hobby" value="traveling" <%
+                                    if(oldStudent.hobby.includes('traveling')){%>
+                                <%= 'checked' %>
+                                    <%}%>>Traveling
+            </td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                <% var cityData=["Surat","Navsari","Dang","Daman","Div","Rajkot"] %>
+                    <select name="city">
+                        <option value="">--Select City--</option>
+                        <% cityData.map((v,i)=>{ %>
+                            <option value="<%= v %>" <% if(oldStudent.city==v){%>
+                                <%="selected"%>
+                                    <%}%>><%=v%>
+                            </option>
+                            <% }) %>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td>
+                <textarea name="message" cols="30" rows="3"><%= oldStudent.message%></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Upload Fils:</td>
+            <td>
+                <input type="file" name="adminImage">
+                <img src="<%= oldStudent.adminImage%>">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="UPDATE DATA"></td>
+        </tr>
+    </form>   
+</table>

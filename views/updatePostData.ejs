@@ -1,0 +1,24 @@
+<table border="1">
+    <form action="/post/editData" method="post" enctype="multipart/form-data">
+        <input type="text" name="oldId" value="<%= pd.id %>">
+        <tr>
+            <td>Enter Title:</td>
+            <td><input type="text" name="title" value="<%= pd.title %>"></td>
+        </tr>
+        <tr>
+            <td>Enter Comment:</td>c
+            <td><input type="text" name="comment" value="<%= pd.comment %>"></td>
+        </tr>
+        <tr>
+            <td>Upload Fils:</td>
+            <td>
+                <input type="file" name="postimg">
+                <img src="<%= pd.postimg%>">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="UPDATE DATA"></td>
+        </tr>
+    </form>   
+</table>
